@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
+/* Page entière */
+
+#bloc_page {
+    margin: auto;
+    max-width: 100%;
+}
+
+body {
+    margin: auto;
+}
+
+/* Header */
+
+header {
+    background-color: rgb(231, 226, 196);
+    h1 {
+        font-family: 'Finger Paint', sans-serif;
+        font-size: 2.2rem;
+    }
+}
+
+.grid__header {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    width: 100%;
+    .area__h1 {
+        padding-left: 5%;
+    }
+    .area__cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+}
