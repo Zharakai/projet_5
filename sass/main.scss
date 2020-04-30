@@ -42,7 +42,11 @@ footer {
     bottom: 0;
     position: fixed;
     width: 100%;
-    font-family: 'Finger Paint', sans-serif;;
+    font-family: 'Finger Paint', sans-serif;
+    a {
+        text-decoration: none;
+        color: black;
+    }
     ul {
         list-style-type: none;
         display: flex;
@@ -63,6 +67,17 @@ footer {
             :nth-child(2) {
                 margin-left: 2%;
                 margin-right: 2%;
+            }
+            .fa-facebook-f:hover {
+                color: rgb(66, 103, 178);
+            }
+            .fa-twitter:hover {
+                color: rgb(30, 172, 255);
+            }
+            .fa-instagram:hover {
+                background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
         }
     }
