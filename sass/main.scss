@@ -35,3 +35,35 @@ header {
         font-size: 1.2rem;
     }
 }
+
+/* Footer */
+
+footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    font-family: 'Finger Paint', sans-serif;;
+    ul {
+        list-style-type: none;
+        display: flex;
+        padding-left: 0rem;
+    }
+    .footer {
+        &__navbar {
+            li {
+                flex: 1;
+                text-align: center;
+            }
+        }
+        &__social {
+            font-size: 1.5rem;
+            ul {
+                justify-content: center;
+            }
+            :nth-child(2) {
+                margin-left: 2%;
+                margin-right: 2%;
+            }
+        }
+    }
+}

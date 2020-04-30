@@ -34,4 +34,31 @@ header h1 {
   font-size: 1.2rem;
 }
 
+/* Footer */
+footer {
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  font-family: "Finger Paint", sans-serif;
+}
+footer ul {
+  list-style-type: none;
+  display: flex;
+  padding-left: 0rem;
+}
+footer .footer__navbar li {
+  flex: 1;
+  text-align: center;
+}
+footer .footer__social {
+  font-size: 1.5rem;
+}
+footer .footer__social ul {
+  justify-content: center;
+}
+footer .footer__social :nth-child(2) {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
 /*# sourceMappingURL=style.css.map */
