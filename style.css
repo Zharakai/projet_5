@@ -1,5 +1,7 @@
 @charset "UTF-8";
+/* Police */
 @import url("https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap");
+/* Couleurs */
 /* Page entière */
 #bloc_page {
   margin: auto;
@@ -30,17 +32,39 @@ header a:hover {
 
 .grid__header {
   display: grid;
-  grid-template-columns: 90% 10%;
+  grid-template-columns: 80% 20%;
   width: 100%;
 }
 .grid__header .area__h1 {
-  padding-left: 5%;
+  padding-left: 10%;
 }
 .grid__header .area__cart {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  margin-right: 5%;
+}
+.grid__header .area__cart .fa-shopping-cart {
+  font-size: 1.7rem;
+}
+.grid__header .area__cart a {
+  position: absolute;
+}
+.grid__header .area__cart .cart__counter {
+  position: relative;
+  top: -17px;
+  right: -17px;
+  font-family: "Finger Paint", sans-serif;
+  background-color: #E28810;
+  padding: 0 5px;
+  border-radius: 30%;
+}
+
+/* Main */
+h2 {
+  font-family: "Finger Paint", sans-serif;
+  text-align: center;
 }
 
 /* Footer */

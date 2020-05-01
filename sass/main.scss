@@ -1,4 +1,14 @@
+/* Police */
+
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
+$primary-police : 'Finger Paint';
+
+/* Couleurs */
+
+$primary-color : rgb(231, 226, 196);
+$primary-color-gradient : #E28810;
+$secondary-color-gradient : #8F5BFE;
 
 /* Page entière */
 
@@ -14,16 +24,16 @@ body {
 /* Header */
 
 header {
-    background-color: rgb(231, 226, 196);
+    background-color: $primary-color;
     h1 {
-        font-family: 'Finger Paint', sans-serif;
+        font-family: $primary-police, sans-serif;
         font-size: 2.2rem;
     }
     a {
         color: black;
         text-decoration: none;
         &:hover {
-            background: linear-gradient(135deg, #E28810, #8F5BFE);
+            background: linear-gradient(135deg, $primary-color-gradient, $secondary-color-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -32,17 +42,40 @@ header {
 
 .grid__header {
     display: grid;
-    grid-template-columns: 90% 10%;
+    grid-template-columns: 80% 20%;
     width: 100%;
     .area__h1 {
-        padding-left: 5%;
+        padding-left: 10%;
     }
     .area__cart {
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 1.2rem;
+        margin-right: 5%;
+        .fa-shopping-cart {
+            font-size: 1.7rem;
+        }
+        a {
+            position: absolute;
+        }
+        .cart__counter {
+            position: relative;
+            top: -17px;
+            right: -17px;
+            font-family: $primary-police, sans-serif;
+            background-color: $primary-color-gradient;
+            padding: 0 5px;
+            border-radius: 30%;
+        }
     }
+}
+
+/* Main */
+
+h2 {
+    font-family: $primary-police, sans-serif;
+    text-align: center;
 }
 
 /* Footer */
@@ -51,7 +84,7 @@ footer {
     bottom: 0;
     position: fixed;
     width: 100%;
-    font-family: 'Finger Paint', sans-serif;
+    font-family: $primary-police, sans-serif;
     a {
         text-decoration: none;
         color: black;
@@ -66,7 +99,7 @@ footer {
         &__navbar {
             a {
                 &:hover {
-                    background: linear-gradient(135deg, #E28810, #8F5BFE);
+                    background: linear-gradient(135deg, $primary-color-gradient, $secondary-color-gradient);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                     &::before {
@@ -77,7 +110,7 @@ footer {
                 &::before {
                     content: "";
                     position: absolute;
-                    background: linear-gradient(135deg, #E28810, #8F5BFE);
+                    background: linear-gradient(135deg, $primary-color-gradient, $secondary-color-gradient);
                     width: 100%;
                     height: 2px;
                     bottom: 0;
