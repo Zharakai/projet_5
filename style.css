@@ -71,6 +71,14 @@ h3 {
   font-family: "Finger Paint", sans-serif;
 }
 
+p {
+  font-family: "Finger Paint", sans-serif;
+}
+
+main a:hover {
+  opacity: 0.5;
+}
+
 .container-products {
   display: flex;
   flex-wrap: wrap;

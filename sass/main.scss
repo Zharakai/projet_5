@@ -82,12 +82,25 @@ h3 {
     font-family: $primary-police, sans-serif;
 }
 
+p {
+    font-family: $primary-police, sans-serif; 
+}
+
+main {
+    a {
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+}
+
 .container-products {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
 }
+
 
 /* Footer */
 
