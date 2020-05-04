@@ -86,6 +86,13 @@ main a:hover {
   align-items: center;
 }
 
+/* Menu personnalisation */
+/* Page Produit */
+.product__sheet {
+  display: flex;
+  font-family: "Finger Paint";
+}
+
 /* Footer */
 footer {
   bottom: 0;
