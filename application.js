@@ -13,6 +13,7 @@ class Products {
     }
 }
 
+//Display products
 class UserInterface {
     displayProducts(products) {
         let result = '';
@@ -21,7 +22,7 @@ class UserInterface {
             <section class="container-products">
                 <article>
                     <div class=""><a href="produit.html"><img src=${product.imageUrl} alt="Ours en peluche Norbert"></a></div>
-                    <h3>${product.name} - ${product.price} €</h3>
+                    <h3>${product.name} - ${product.price/100} €</h3>
                 </article>
             </section>
             `;
@@ -30,6 +31,7 @@ class UserInterface {
     }
 }
 
+//Local storage
 class Storage {
 
 }

@@ -86,13 +86,17 @@ main a:hover {
   align-items: center;
 }
 
-/* Menu personnalisation */
 /* Page Produit */
-.product__sheet {
-  display: flex;
+.container-product {
   font-family: "Finger Paint";
+  display: flex;
+  justify-content: center;
+}
+.container-product .product__sheet {
+  display: flex;
 }
 
+/* Menu personnalisation */
 /* Footer */
 footer {
   bottom: 0;
