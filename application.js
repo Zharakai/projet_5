@@ -23,22 +23,6 @@ class UserInterface {
                     <div class=""><a href="produit.html"><img src=${product.imageUrl} alt="Ours en peluche Norbert"></a></div>
                     <h3>${product.name} - ${product.price} €</h3>
                 </article>
-                <article>
-                    <div class=""><a href="produit.html"><img src="./images/teddy_2.jpg" alt="Ours en peluche Arnold"></a></div>
-                    <h3>Arnold - 39 €</h3>
-                </article>
-                <article>
-                    <div class=""><a href="produit.html"><img src="./images/teddy_3.jpg" alt="Ours en peluches Lenny et Carl"></a></div>
-                    <h3>Lenny et Carl - 59 €</h3>
-                </article>
-                <article>
-                    <div class=""><a href="produit.html"><img src="./images/teddy_4.jpg" alt="Ours en peluche Gustav"></a></div>
-                    <h3>Gustav - 45 €</h3>
-                </article>
-                <article>
-                    <div class=""><a href="produit.html"><img src="./images/teddy_5.jpg" alt="Ours en peluche Garfunkel"></a></div>
-                    <h3>Garfunkel - 55 €</h3>
-                </article>
             </section>
             `;
         });
@@ -55,5 +39,5 @@ document.addEventListener("DOMContentLoaded", () => {
     const products = new Products();
 
     // Get all products
-    products.getProducts().then(products => console.log(products));
+    products.getProducts().then(products => ui.displayProducts(products));
 });
