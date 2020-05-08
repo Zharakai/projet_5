@@ -31,6 +31,9 @@ class UserInterface {
     }
 }
 
+//Display product
+
+
 //Local storage
 class Storage {
 

@@ -73,6 +73,10 @@ header {
 
 /* Main */
 
+h1 {
+    font-family: $primary-police, sans-serif;
+}
+
 h2 {
     font-family: $primary-police, sans-serif;
     text-align: center;
@@ -165,6 +169,19 @@ main {
     .scroll::after {
         content:" ▼";
         font-size: 12px;
+    }
+}
+
+/* Bouton ajouter au panier */
+
+
+/* Page confirmation */
+
+.confirm {
+    text-align: center;
+    &__footer {
+        bottom: 0;
+        position: fixed;
     }
 }
 

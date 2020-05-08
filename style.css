@@ -62,6 +62,10 @@ header a:hover {
 }
 
 /* Main */
+h1 {
+  font-family: "Finger Paint", sans-serif;
+}
+
 h2 {
   font-family: "Finger Paint", sans-serif;
   text-align: center;
@@ -145,6 +149,16 @@ li .container-product ul:hover .under {
 .scrolling_menu .scroll::after {
   content: " ▼";
   font-size: 12px;
+}
+
+/* Bouton ajouter au panier */
+/* Page confirmation */
+.confirm {
+  text-align: center;
+}
+.confirm__footer {
+  bottom: 0;
+  position: fixed;
 }
 
 /* Footer */
