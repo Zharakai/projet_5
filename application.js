@@ -1,4 +1,5 @@
 const productsDOM = document.querySelector('.container-products');
+const productDOM = document.querySelector('.container-product');
 
 // Getting the products
 class Products {
@@ -29,9 +30,16 @@ class UserInterface {
         });
         productsDOM.innerHTML = result;
     }
+    getBagButtons() {
+        const buttons = [...document.querySelectorAll(".btn__cart")];
+        buttons.forEach(button => {
+            let id = button.dataset.id;
+            console.log(id);
+        });
+    }
 }
 
-//Display one product
+//Display one product (page produit)
 
 
 //Local storage
@@ -49,6 +57,8 @@ document.addEventListener("DOMContentLoaded", () => {
     products.getProducts().then(products => {
         ui.displayProducts(products);
         Storage.saveProducts(products);
+    }).then(() => {
+        ui.getBagButtons();
     });
     
 });
