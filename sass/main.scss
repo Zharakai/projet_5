@@ -96,6 +96,9 @@ main {
             opacity: 0.5;
         }
     }
+    img {
+        object-fit: contain;
+    }
 }
 
 .container-products {
@@ -174,6 +177,27 @@ main {
 
 /* Bouton ajouter au panier */
 
+.btn__cart {
+    cursor: pointer;
+    font-family: $primary-police, sans-serif;
+    font-size: 1rem;
+    padding: 2%;
+    background-color: $primary-color-gradient;
+    border-style: solid;
+    border-radius: 10px;
+    &:hover {
+        background-color: $secondary-color-gradient;
+    }
+}
+
+.container__btn {
+    position: relative;
+    button {
+        position: absolute;
+        left: 2rem;
+        bottom: 2rem;
+    }
+}
 
 /* Page confirmation */
 
