@@ -1,5 +1,4 @@
 const productsDOM = document.querySelector('.container-products');
-const productDOM = document.querySelector('.container-product');
 
 // Getting the products
 class Products {
@@ -22,7 +21,7 @@ class UserInterface {
             result +=`
             <section class="container-products">
                 <article>
-                    <div class=""><a href="produit.html"><img src=${product.imageUrl} alt="Ours en peluche Norbert"></a></div>
+                    <div class="teddy"><a href="produit.html"><img src=${product.imageUrl} alt="Ours en peluche ${product.name}"></a></div>
                     <h3>${product.name} - ${product.price/100} €</h3>
                 </article>
             </section>
@@ -31,9 +30,6 @@ class UserInterface {
         productsDOM.innerHTML = result;
     }
 }
-
-//Display one product (page produit)
-
 
 //Local storage
 class Storage {
