@@ -18,13 +18,11 @@ class UserInterface {
     displayProducts(products) {
         let result = '';
         products.forEach(product => {
-            result +=`
-            <section class="container-products">
+            result += `
                 <article>
-                    <div class="teddy"><a href="produit.html"><img src=${product.imageUrl} alt="Ours en peluche ${product.name}"></a></div>
+                    <div class="teddy"><a href="produit.html?_id=${product._id}"><img src=${product.imageUrl} alt="Ours en peluche ${product.name}"></a></div>
                     <h3>${product.name} - ${product.price/100} €</h3>
                 </article>
-            </section>
             `;
         });
         productsDOM.innerHTML = result;
