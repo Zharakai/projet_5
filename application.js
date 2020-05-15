@@ -8,7 +8,7 @@ class Products {
             let data = await result.json();
             return data;
         } catch (error) {
-            Console.log(error);
+            console.log(error);
         }  
     }
 }
