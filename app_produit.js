@@ -1,5 +1,8 @@
 const teddy = document.querySelector('.teddy');
 const productDOM = document.querySelector('.container-product');
+const btn = document.querySelector('.btn__cart');
+
+console.log(btn);
 
 // Isolate URL & id
 const url = window.location.search;
@@ -34,7 +37,7 @@ class ProductInterface {
                             <ul class="under">${product.colors}</ul>
                         </li>
                     </ul>
-                    <button class="btn__cart" disabled type="submit" data-id="">Ajouter au panier</button>
+                    <button class="btn__cart" disabled type="submit" data-id="${product._id}">Ajouter au panier</button>
                 </div>
             </article>
         `;
