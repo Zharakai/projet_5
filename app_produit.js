@@ -2,8 +2,6 @@ const teddy = document.querySelector('.teddy');
 const productDOM = document.querySelector('.container-product');
 const btn = document.querySelector('.btn__cart');
 
-console.log(btn);
-
 // Isolate URL & id
 const url = window.location.search;
 const id = window.location.search.replace("?_id=", "");
@@ -21,7 +19,7 @@ class Product {
     }
 }
 
-// Display product
+//Product Interface
 class ProductInterface {
     displayProduct(product) {
         let result = `
@@ -32,16 +30,22 @@ class ProductInterface {
                     <p>${product.description}</p>
                 </div>
                 <div class="container__btn">
-                    <ul class="scrolling_menu">
-                        <li class="scroll">Couleur de votre peluche
-                            <ul class="under">${product.colors}</ul>
-                        </li>
-                    </ul>
-                    <button class="btn__cart" disabled type="submit" data-id="${product._id}">Ajouter au panier</button>
+                    <select name="Couleurs">
+                        <option>${product.colors[0]}</option>
+                        <option>${product.colors[1]}</option>
+                        <option>${product.colors[2]}</option>
+                        <option>${product.colors[3]}</option>
+                    </select>
+                    <button class="btn__cart" type="submit" data-id="${product._id}">Ajouter au panier</button>
                 </div>
             </article>
         `;
         productDOM.innerHTML = result;
+    }
+    getBagButton() {
+        btn.addEventListener("click", (event) => {
+            console.log(event);
+        });
     }
 }
 
@@ -49,6 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = new Product();
     const pi = new ProductInterface
 
-    //Get all products
-    product.getProduct().then(product => pi.displayProduct(product));
+    //Get product
+    product.getProduct().then(product => pi.displayProduct(product)).then(() => {
+        pi.getBagButton();
+    });
 });
