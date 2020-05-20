@@ -110,6 +110,13 @@ main {
 
 /* Page Produit */
 
+.main-product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .container-product {
     font-family: $primary-police;
     display: flex;
@@ -131,7 +138,7 @@ main {
 
 /* Menu personnalisation */
 
-select {
+select, label {
     font-family: $primary-police, sans-serif;
 }
 
@@ -150,14 +157,14 @@ select {
     }
 }
 
-.container__btn {
+/*.container__btn {
     position: relative;
     button {
         position: absolute;
         left: 2rem;
         bottom: 2rem;
     }
-}
+}*/
 
 /* Page confirmation */
 

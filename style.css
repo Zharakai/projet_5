@@ -94,6 +94,13 @@ main img {
 }
 
 /* Page Produit */
+.main-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .container-product {
   font-family: "Finger Paint";
   display: flex;
@@ -114,7 +121,7 @@ li .container-product ul:hover .under {
 }
 
 /* Menu personnalisation */
-select {
+select, label {
   font-family: "Finger Paint", sans-serif;
 }
 
@@ -132,15 +139,14 @@ select {
   background-color: #8F5BFE;
 }
 
-.container__btn {
-  position: relative;
-}
-.container__btn button {
-  position: absolute;
-  left: 2rem;
-  bottom: 2rem;
-}
-
+/*.container__btn {
+    position: relative;
+    button {
+        position: absolute;
+        left: 2rem;
+        bottom: 2rem;
+    }
+}*/
 /* Page confirmation */
 .confirm {
   text-align: center;

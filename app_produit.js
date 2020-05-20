@@ -1,7 +1,7 @@
 const teddy = document.querySelector('.teddy');
 const productDOM = document.querySelector('.container-product');
 const btn = document.querySelector('.btn__cart');
-const colorsDOM = document.querySelector('select')
+const selectColor = document.querySelector('select')
 
 // Isolate URL & id
 const url = window.location.search;
@@ -25,16 +25,14 @@ class ProductInterface {
     displayProduct(product) {
         let colors = product.colors
         let result = `
-            <article class="product__sheet">
                 <div>
                     <img src="${product.imageUrl}">
                     <h3>${product.name} - ${product.price/100} €</h3>
                     <p>${product.description}</p>
                 </div>
-            </article>
         `;
         for (let i = 0; i < colors.length; i++) {
-            colorsDOM.innerHTML += `
+            selectColor.innerHTML += `
             <option value="${colors[i]}">${colors[i]}</option>
             `;
         }
