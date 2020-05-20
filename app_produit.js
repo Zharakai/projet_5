@@ -1,6 +1,7 @@
 const teddy = document.querySelector('.teddy');
 const productDOM = document.querySelector('.container-product');
 const btn = document.querySelector('.btn__cart');
+const colorsDOM = document.querySelector('select')
 
 // Isolate URL & id
 const url = window.location.search;
@@ -22,6 +23,7 @@ class Product {
 //Product Interface
 class ProductInterface {
     displayProduct(product) {
+        let colors = product.colors
         let result = `
             <article class="product__sheet">
                 <div>
@@ -29,17 +31,13 @@ class ProductInterface {
                     <h3>${product.name} - ${product.price/100} €</h3>
                     <p>${product.description}</p>
                 </div>
-                <div class="container__btn">
-                    <select name="Couleurs">
-                        <option>${product.colors[0]}</option>
-                        <option>${product.colors[1]}</option>
-                        <option>${product.colors[2]}</option>
-                        <option>${product.colors[3]}</option>
-                    </select>
-                    <button class="btn__cart" type="submit" data-id="${product._id}">Ajouter au panier</button>
-                </div>
             </article>
         `;
+        for (let i = 0; i < colors.length; i++) {
+            colorsDOM.innerHTML += `
+            <option value="${colors[i]}">${colors[i]}</option>
+            `;
+        }
         productDOM.innerHTML = result;
     }
     getBagButton() {
