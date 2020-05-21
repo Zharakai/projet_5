@@ -147,6 +147,17 @@ select, label {
         bottom: 2rem;
     }
 }*/
+/* Page panier */
+.h1__cart {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* Page confirmation */
 .confirm {
   text-align: center;
