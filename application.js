@@ -43,6 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Get all products
     products.getProducts().then(products => {
         ui.displayProducts(products);
-        Storage.saveProducts(products);
+        //Storage.saveProducts(products);
     });
 });
