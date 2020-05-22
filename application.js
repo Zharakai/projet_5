@@ -2,47 +2,47 @@ const productsDOM = document.querySelector('.container-products');
 
 // Getting the products
 class Products {
-    async getProducts() {
-        try {
-            let result = await fetch('http://localhost:3000/api/teddies');
-            let data = await result.json();
-            return data;
-        } catch (error) {
-            console.log(error);
-        }  
-    }
+  async getProducts() {
+    try {
+      let result = await fetch('http://localhost:3000/api/teddies');
+      let data = await result.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }  
+  }
 }
 
-//Display products
+// Display products
 class UserInterface {
-    displayProducts(products) {
-        let result = '';
-        products.forEach(product => {
-            result += `
-                <article>
-                    <div class="teddy"><a href="produit.html?_id=${product._id}"><img src=${product.imageUrl} alt="Ours en peluche ${product.name}"></a></div>
-                    <h3>${product.name} - ${product.price/100} €</h3>
-                </article>
-            `;
-        });
-        productsDOM.innerHTML = result;
-    }
+  displayProducts(products) {
+    let result = '';
+    products.forEach(product => {
+      result += `
+        <article>
+          <div class="teddy"><a href="produit.html?_id=${product._id}"><img src=${product.imageUrl} alt="Ours en peluche ${product.name}"></a></div>
+          <h3>${product.name} - ${product.price/100} €</h3>
+        </article>
+      `;
+    });
+    productsDOM.innerHTML = result;
+  }
 }
 
-//Local storage
+// Local storage
 class Storage {
-    static saveProducts(products) {
-        localStorage.setItem("products", JSON.stringify(products));
-    }
+  static saveProducts(products) {
+    localStorage.setItem("products", JSON.stringify(products));
+  }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    const ui = new UserInterface();
-    const products = new Products();
+  const ui = new UserInterface();
+  const products = new Products();
 
-    // Get all products
-    products.getProducts().then(products => {
-        ui.displayProducts(products);
-        //Storage.saveProducts(products);
-    });
+  // Get all products
+  products.getProducts().then(products => {
+    ui.displayProducts(products);
+    Storage.saveProducts(products);
+  });
 });

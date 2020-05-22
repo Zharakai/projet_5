@@ -1,16 +1,16 @@
-/* Police */
+// Police
 
 @import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
 
 $primary-police : 'Finger Paint';
 
-/* Couleurs */
+// Couleurs
 
 $primary-color : rgb(231, 226, 196);
 $primary-color-gradient : #E28810;
 $secondary-color-gradient : #8F5BFE;
 
-/* Page entière */
+// Page entière
 
 #bloc_page {
     margin: auto;
@@ -21,7 +21,11 @@ body {
     margin: auto;
 }
 
-/* Header */
+main {
+    margin: 0 2%;
+}
+
+// Header
 
 header {
     background-color: $primary-color;
@@ -71,7 +75,7 @@ header {
     }
 }
 
-/* Main */
+// Main
 
 h1 {
     font-family: $primary-police, sans-serif;
@@ -108,7 +112,7 @@ main {
     align-items: center;
 }
 
-/* Page Produit */
+// Page Produit
 
 .main-product {
     display: flex;
@@ -136,13 +140,13 @@ main {
     }
 }
 
-/* Menu personnalisation */
+// Menu personnalisation
 
 select, label {
     font-family: $primary-police, sans-serif;
 }
 
-/* Bouton ajouter au panier */
+// Bouton ajouter au panier
 
 .btn__cart {
     cursor: pointer;
@@ -166,7 +170,7 @@ select, label {
     }
 }*/
 
-/* Page panier */
+// Page panier
 
 .h1__cart {
     text-align: center;
@@ -178,7 +182,7 @@ form {
     align-items: center;
 }
 
-/* Page confirmation */
+// Page confirmation
 
 .confirm {
     text-align: center;
@@ -188,7 +192,7 @@ form {
     }
 }
 
-/* Footer */
+// Footer
 
 footer {
     bottom: 0;
@@ -258,3 +262,17 @@ footer {
         }
     }
 }
+
+// Responsive
+
+@media all and (max-width: 520px) {
+    @-webkit-viewport {
+        width: device-width;
+    }
+        img {
+        max-width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
+

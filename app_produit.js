@@ -3,6 +3,8 @@ const productDOM = document.querySelector('.container-product');
 const btn = document.querySelector('.btn__cart');
 const selectColor = document.querySelector('select');
 
+let cart = [];
+
 // Isolate URL & id
 const url = window.location.search;
 const id = url.replace('?_id=', '');
@@ -38,13 +40,27 @@ class ProductInterface {
     }
     productDOM.innerHTML = result;
   }
-
   getBagButton() {
     btn.addEventListener('click', (event) => {
-      console.log(event);
+      // const inCart = cart.find(item => item.id === id);
+      // Get product from localStorage
+      //let cartItem = Storage.getProduct(id)
+      //console.log(cartItem);
     });
   }
 }
+
+// Local storage
+/*class Storage {
+  static saveProducts(products) {
+    localStorage.setItem("products", JSON.stringify(products));
+  }
+  static getProduct(id) {
+    let products = JSON.parse(localStorage.getItem('products'));
+    return products.find(product => product.id === id);
+  }
+}*/
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const product = new Product();
@@ -53,5 +69,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get product
   product.getProduct().then((product) => pi.displayProduct(product)).then(() => {
     pi.getBagButton();
+    //Storage.saveProducts(products);
   });
 });

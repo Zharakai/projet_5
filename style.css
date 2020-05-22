@@ -1,8 +1,4 @@
-@charset "UTF-8";
-/* Police */
 @import url("https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap");
-/* Couleurs */
-/* Page entière */
 #bloc_page {
   margin: auto;
   max-width: 100%;
@@ -12,7 +8,10 @@ body {
   margin: auto;
 }
 
-/* Header */
+main {
+  margin: 0 2%;
+}
+
 header {
   background-color: #e7e2c4;
 }
@@ -61,7 +60,6 @@ header a:hover {
   border-radius: 30%;
 }
 
-/* Main */
 h1 {
   font-family: "Finger Paint", sans-serif;
 }
@@ -93,7 +91,6 @@ main img {
   align-items: center;
 }
 
-/* Page Produit */
 .main-product {
   display: flex;
   flex-direction: column;
@@ -120,12 +117,10 @@ li .container-product ul:hover .under {
   display: block;
 }
 
-/* Menu personnalisation */
 select, label {
   font-family: "Finger Paint", sans-serif;
 }
 
-/* Bouton ajouter au panier */
 .btn__cart {
   cursor: pointer;
   font-family: "Finger Paint", sans-serif;
@@ -147,7 +142,6 @@ select, label {
         bottom: 2rem;
     }
 }*/
-/* Page panier */
 .h1__cart {
   text-align: center;
 }
@@ -158,7 +152,6 @@ form {
   align-items: center;
 }
 
-/* Page confirmation */
 .confirm {
   text-align: center;
 }
@@ -167,7 +160,6 @@ form {
   position: fixed;
 }
 
-/* Footer */
 footer {
   bottom: 0;
   width: 100%;
@@ -229,6 +221,17 @@ footer .footer__social .fa-instagram:hover {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media all and (max-width: 520px) {
+  @-webkit-viewport {
+    width: device-width;
+  }
+  img {
+    max-width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
