@@ -4,12 +4,12 @@ const productsDOM = document.querySelector('.container-products');
 class Products {
   async getProducts() {
     try {
-      let result = await fetch('http://localhost:3000/api/teddies');
-      let data = await result.json();
+      const result = await fetch('http://localhost:3000/api/teddies');
+      const data = await result.json();
       return data;
     } catch (error) {
       console.log(error);
-    }  
+    }
   }
 }
 
@@ -17,7 +17,7 @@ class Products {
 class UserInterface {
   displayProducts(products) {
     let result = '';
-    products.forEach(product => {
+    products.forEach((product) => {
       result += `
         <article>
           <div class="teddy"><a href="produit.html?_id=${product._id}"><img src=${product.imageUrl} alt="Ours en peluche ${product.name}"></a></div>
@@ -32,16 +32,16 @@ class UserInterface {
 // Local storage
 class Storage {
   static saveProducts(products) {
-    localStorage.setItem("products", JSON.stringify(products));
+    localStorage.setItem('products', JSON.stringify(products));
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
   const ui = new UserInterface();
   const products = new Products();
 
   // Get all products
-  products.getProducts().then(products => {
+  products.getProducts().then((products) => {
     ui.displayProducts(products);
     Storage.saveProducts(products);
   });

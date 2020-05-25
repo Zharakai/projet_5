@@ -33,7 +33,7 @@ class ProductInterface {
           <p>${product.description}</p>
         </div>
     `;
-    for (let i = 0; i < colors.length; i++) {
+    for (let i = 0; i < colors.length; i += 1) {
       selectColor.innerHTML += `
       <option value="${colors[i]}">${colors[i]}</option>
       `;
@@ -41,26 +41,40 @@ class ProductInterface {
     productDOM.innerHTML = result;
   }
   getBagButton() {
+    const inCart = cart.find(item => item.id === id);
     btn.addEventListener('click', (event) => {
-      // const inCart = cart.find(item => item.id === id);
       // Get product from localStorage
-      //let cartItem = Storage.getProduct(id)
-      //console.log(cartItem);
+      let cartItem = {...Storage.getProduct(id), amount: 1};
+      // Add to cart
+      cart = [...cart, cartItem];
+      // Save cart in localStorage
+      Storage.saveCart(cart);
+      // Cart value
+      this.cartValue(cart);
+    });
+  }
+
+  cartValue(cart) {
+    let total = 0;
+    let itemsTotal = 0;
+    cart.map((item) => {
+
     });
   }
 }
 
 // Local storage
-/*class Storage {
-  static saveProducts(products) {
-    localStorage.setItem("products", JSON.stringify(products));
-  }
+class Storage {
   static getProduct(id) {
     let products = JSON.parse(localStorage.getItem('products'));
-    return products.find(product => product.id === id);
+    console.log(products.id);
+    return products.find((product) => product.id === id);
   }
-}*/
 
+  static saveCart(cart) {
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   const product = new Product();
@@ -69,6 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get product
   product.getProduct().then((product) => pi.displayProduct(product)).then(() => {
     pi.getBagButton();
-    //Storage.saveProducts(products);
+    Storage.getProduct(id);
   });
 });
