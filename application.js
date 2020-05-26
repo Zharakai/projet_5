@@ -8,7 +8,7 @@ class Products {
       const data = await result.json();
       return data;
     } catch (error) {
-      console.log(error);
+      return console.log(error);
     }
   }
 }
@@ -29,12 +29,12 @@ class UserInterface {
   }
 }
 
-// Local storage
+/*// Local storage
 class Storage {
   static saveProducts(products) {
     localStorage.setItem('products', JSON.stringify(products));
   }
-}
+}*/
 
 document.addEventListener('DOMContentLoaded', () => {
   const ui = new UserInterface();
@@ -43,6 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get all products
   products.getProducts().then((products) => {
     ui.displayProducts(products);
-    Storage.saveProducts(products);
+    //Storage.saveProducts(products);
   });
 });

@@ -3,7 +3,7 @@ const productDOM = document.querySelector('.container-product');
 const btn = document.querySelector('.btn__cart');
 const selectColor = document.querySelector('select');
 
-let cart = [];
+const cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 // Isolate URL & id
 const url = window.location.search;
@@ -39,41 +39,59 @@ class ProductInterface {
       `;
     }
     productDOM.innerHTML = result;
+    
+    let color = document.querySelector('select').value;
+    const object = {
+      "id" : url.replace('?_id=', ''),
+      "name" : product.name,
+      "price" : product.price,
+      "color" : color
+    }
+    return object
   }
   getBagButton() {
-    const inCart = cart.find(item => item.id === id);
+    let test = displayProduct(product);
+    btn.addEventListener('click', (event) => {
+      if (!cart) {
+        console.log(object);
+        localStorage.setItem('cart', JSON.stringify(object));
+      }
+    })
+    /*let inCart = cart.find(item => item.id === id);
     btn.addEventListener('click', (event) => {
       // Get product from localStorage
-      let cartItem = {...Storage.getProduct(id), amount: 1};
+      let cartItem = {...Storage.getProduct(), amount: 1};
       // Add to cart
       cart = [...cart, cartItem];
       // Save cart in localStorage
       Storage.saveCart(cart);
       // Cart value
       this.cartValue(cart);
-    });
+    })*/
   }
-
+/*
   cartValue(cart) {
     let total = 0;
     let itemsTotal = 0;
     cart.map((item) => {
 
     });
-  }
+  };
 }
+
+let cart = [];
 
 // Local storage
 class Storage {
   static getProduct(id) {
     let products = JSON.parse(localStorage.getItem('products'));
-    console.log(products.id);
-    return products.find((product) => product.id === id);
+    console.log(id);
+    return products.find((products) => products.id === id);
   }
 
   static saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
-  }
+  }*/
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -83,6 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get product
   product.getProduct().then((product) => pi.displayProduct(product)).then(() => {
     pi.getBagButton();
-    Storage.getProduct(id);
+    //Storage.getProduct(id);
   });
 });
