@@ -1,9 +1,9 @@
 const teddy = document.querySelector('.teddy');
 const productDOM = document.querySelector('.container-product');
-const btn = document.querySelector('.btn__cart');
+const addToCartButton = document.querySelector('.btn__cart');
 const selectColor = document.querySelector('select');
 
-const cart = JSON.parse(localStorage.getItem('cart')) || [];
+//let cart = [];
 
 // Isolate URL & id
 const url = window.location.search;
@@ -28,8 +28,8 @@ class ProductInterface {
     const { colors } = product;
     const result = `
         <div>
-          <img src="${product.imageUrl}">
-          <h3>${product.name} - ${product.price / 100} €</h3>
+          <img class"image" src="${product.imageUrl}">
+          <h3><span class="name">${product.name}</span> - <span class="price">${product.price / 100}</span> €</h3>
           <p>${product.description}</p>
         </div>
     `;
@@ -39,57 +39,50 @@ class ProductInterface {
       `;
     }
     productDOM.innerHTML = result;
-    
-    let color = document.querySelector('select').value;
-    const object = {
-      "id" : url.replace('?_id=', ''),
-      "name" : product.name,
-      "price" : product.price,
-      "color" : color
-    }
-    return object
   }
   getBagButton() {
-    let test = displayProduct(product);
-    btn.addEventListener('click', (event) => {
-      if (!cart) {
-        console.log(object);
-        localStorage.setItem('cart', JSON.stringify(object));
-      }
-    })
-    /*let inCart = cart.find(item => item.id === id);
-    btn.addEventListener('click', (event) => {
+    var teddy = {
+      name : document.querySelector('.name').innerText,
+      price : document.querySelector('.price').innerText,
+      color : selectColor.value,
+      //const imageSrc = document.getElementsByClassName('.image').src;
+    };
+    //let inCart = cart.find(item => item.id === id);
+    addToCartButton.addEventListener('click', (event) => {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(teddy);
+      console.log(teddy);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      
       // Get product from localStorage
-      let cartItem = {...Storage.getProduct(), amount: 1};
+      //let cartItem = {...Storage.getProduct(id), amount: 1};
       // Add to cart
-      cart = [...cart, cartItem];
+      //cart = [...cart];
       // Save cart in localStorage
-      Storage.saveCart(cart);
+      //Storage.saveCart(cart);
       // Cart value
-      this.cartValue(cart);
-    })*/
+      //this.cartValue(cart);
+    })
   }
-/*
-  cartValue(cart) {
+
+  /*cartValue(cart) {
     let total = 0;
     let itemsTotal = 0;
     cart.map((item) => {
 
     });
-  };
+  };*/
 }
-
-let cart = [];
 
 // Local storage
 class Storage {
-  static getProduct(id) {
+  /*static getProduct(id) {
     let products = JSON.parse(localStorage.getItem('products'));
-    console.log(id);
+    //console.log(id);
     return products.find((products) => products.id === id);
-  }
+  }*/
 
-  static saveCart(cart) {
+  /*static saveCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
   }*/
 }
@@ -101,6 +94,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get product
   product.getProduct().then((product) => pi.displayProduct(product)).then(() => {
     pi.getBagButton();
-    //Storage.getProduct(id);
+    //Storage.saveCart();
   });
 });
