@@ -152,6 +152,10 @@ form {
   align-items: center;
 }
 
+.shopping-cart {
+  display: flex;
+}
+
 .confirm {
   text-align: center;
 }

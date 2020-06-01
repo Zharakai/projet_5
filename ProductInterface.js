@@ -39,6 +39,12 @@ class ProductInterface {
       localStorage.setItem('cart', JSON.stringify(cart));
       // Set cart counter
       let cartItems = document.getElementsByClassName('cart__counter');
+      console.log(cartItems.textContent)
+      console.log(cart.length);
+      const result = `
+        ${cart.length}
+      `;
+      cartItems.textContent = result;
       /*if (cart === null || cart === undefined) {
         return itemsTotal.innerHTML = 0;
       } else {
