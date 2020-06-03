@@ -1,4 +1,7 @@
-var removeCartItems = document.getElementsByClassName('btn-danger');
+const getItems = localStorage.getItem('cart');
+
+
+/*var removeCartItems = document.getElementsByClassName('btn-danger');
 
 for (var i = 0; i < removeCartItems.length; i =+ 1) {
     var button = removeCartItems[i];
@@ -6,4 +9,4 @@ for (var i = 0; i < removeCartItems.length; i =+ 1) {
         var buttonClicked = event.target;
         buttonClicked.parentElement.parentElement.remove();
     })
-}
+}*/

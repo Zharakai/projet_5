@@ -153,7 +153,23 @@ form {
 }
 
 .shopping-cart {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+}
+.shopping-cart-product {
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.shopping-cart-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.shopping-cart img {
+  max-width: 75px;
 }
 
 .confirm {
