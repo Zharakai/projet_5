@@ -1,3 +1,5 @@
+let cartItems = document.getElementsByClassName('cart__counter');
+
 // Product Interface
 class ProductInterface {
   constructor(product) {
@@ -31,27 +33,15 @@ class ProductInterface {
       const teddy = {
         // eslint-disable-next-line no-underscore-dangle
         id: this.product._id,
-        name: document.querySelector('.name').innerText,
-        price: document.querySelector('.price').innerText,
         color: this.selectColorElement.value,
+        // name: document.querySelector('.name').innerText,
+        // price: document.querySelector('.price').innerText,
       };
       cart.push(teddy);
       localStorage.setItem('cart', JSON.stringify(cart));
       // Set cart counter
-      let cartItems = document.getElementsByClassName('cart__counter');
-      console.log(cart.length);
-      const result = `
-        ${cart.length}
-      `;
-      cartItems.innerText = result;
-      console.log(cartItems)
-      /*if (cart === null || cart === undefined) {
-        return itemsTotal.innerHTML = 0;
-      } else {
-        itemsTotal.innerHTML = cart.length;
-        console.log(cart.length);
-      }*/
+      const result = cart.length;
+      cartItems[0].innerText = result;
     });
-    
   }
 }
