@@ -24,6 +24,7 @@ class ProductsId {
   async productsId() {
     for (let i = 0; i < items.length; i += 1) {
       const itemsId = items[i].id;
+      return console.log(itemsId);
     }
   }
 }
@@ -36,8 +37,15 @@ class UserInterface {
     let resultQuantity = '';
     let resultTotal = '';
     items.forEach((item) => {
-  
+      result +=`<div class="shopping-cart-product"><img src=${item.imageURL}><p>${item.name}</p></div>`;
+      resultColor += item.color;
+      resultPrice += ``;
+      resultQuantity += ``;
+      resultTotal += ``;
+      console.log(item.color)
     });
+    productsCartElement.innerHTML = result;
+    productsColorElement.innerHTML = resultColor;
   }
 }
 
