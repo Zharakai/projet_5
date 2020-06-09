@@ -154,7 +154,7 @@ form {
 
 .shopping-cart {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 30% 20% 20% 15% 15%;
   text-align: center;
 }
 .shopping-cart-product {

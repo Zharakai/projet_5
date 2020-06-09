@@ -1,11 +1,15 @@
-let productsCartElement = document.getElementsByClassName('shopping-cart-products');
+let productsCartElement = document.getElementsByClassName('shopping-cart-product');
 let productsColorElement = document.getElementsByClassName('shopping-cart-area-color');
 let productsPriceElement = document.getElementsByClassName('shopping-cart-area-price');
 let productsQuantityElement = document.getElementsByClassName('shopping-cart-area-quantity');
 let productsTotalElement = document.getElementsByClassName('shopping-cart-area-total');
 
-const getItems = localStorage.getItem('cart');
-let items = JSON.parse(getItems);
+let titleElement = document.getElementsByClassName('h1__cart');
+
+const cartItems = JSON.parse(localStorage.getItem('cart')) || []; 
+
+// const getItems = localStorage.getItem('cart');
+// let items = JSON.parse(getItems);
 
 // Getting the products
 class Products {
@@ -22,30 +26,36 @@ class Products {
 
 class ProductsId {
   async productsId() {
-    for (let i = 0; i < items.length; i += 1) {
-      const itemsId = items[i].id;
+    for (let i = 0; i <= cartItems.length; i += 1) {
+      const itemsId = cartItems[i].id;
       return console.log(itemsId);
     }
   }
 }
 
 class UserInterface {
-  displayItems(items) {
-    let result = '';
-    let resultColor = '';
-    let resultPrice = '';
-    let resultQuantity = '';
-    let resultTotal = '';
-    items.forEach((item) => {
-      result +=`<div class="shopping-cart-product"><img src=${item.imageURL}><p>${item.name}</p></div>`;
-      resultColor += item.color;
-      resultPrice += ``;
-      resultQuantity += ``;
-      resultTotal += ``;
-      console.log(item.color)
-    });
-    productsCartElement.innerHTML = result;
-    productsColorElement.innerHTML = resultColor;
+  displayItems(cartItems) {
+    if (!cartItems.length) {
+      titleElement[0].textContent = 'Désolé, votre panier est vide !';
+    } else {
+      let result = '';
+      let resultColor = '';
+      let resultPrice = '';
+      let resultQuantity = '';
+      let resultTotal = '';
+      cartItems.forEach((item) => {
+        result +=`<div class="shopping-cart-product"><img src=${item.image}><p>${item.name}</p></div>`;
+        resultColor += `<p>${item.color}</p>`;
+        resultPrice += `<p>${item.price}</p>`;
+        resultQuantity += `<p>${1}</p>`;
+        resultTotal += `<p>${parseInt(item.price) * 1}</p>`;
+      });
+      productsCartElement[0].innerHTML = result;
+      productsColorElement[0].innerHTML = resultColor;
+      productsPriceElement[0].innerHTML = resultPrice;
+      productsQuantityElement[0].innerHTML = resultQuantity;
+      productsTotalElement[0].innerHTML = resultTotal;
+    }
   }
 }
 
@@ -56,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Get all products
   products.getProducts().then((products) => {
-    productsId.productsId();
-    ui.displayItems(items)
+    // productsId.productsId();
+    ui.displayItems(cartItems)
   });
 });
 

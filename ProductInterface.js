@@ -34,8 +34,9 @@ class ProductInterface {
         // eslint-disable-next-line no-underscore-dangle
         id: this.product._id,
         color: this.selectColorElement.value,
-        // name: document.querySelector('.name').innerText,
-        // price: document.querySelector('.price').innerText,
+        name: document.querySelector('.name').innerText,
+        price: document.querySelector('.price').innerText,
+        image: this.product.imageUrl
       };
       cart.push(teddy);
       localStorage.setItem('cart', JSON.stringify(cart));
