@@ -172,6 +172,18 @@ form {
   max-width: 75px;
 }
 
+.h3__cart__price {
+  text-align: right;
+  margin-right: 5%;
+}
+
+.delete__cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5%;
+}
+
 .confirm {
   text-align: center;
 }

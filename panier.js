@@ -3,6 +3,8 @@ let productsColorElement = document.getElementsByClassName('shopping-cart-area-c
 let productsPriceElement = document.getElementsByClassName('shopping-cart-area-price');
 let productsQuantityElement = document.getElementsByClassName('shopping-cart-area-quantity');
 let productsTotalElement = document.getElementsByClassName('shopping-cart-area-total');
+let cartTotal = document.getElementsByClassName('cart__total');
+let deleteCartBtn = document.getElementsByClassName('delete__cart__btn');
 
 let titleElement = document.getElementsByClassName('h1__cart');
 
@@ -43,18 +45,26 @@ class UserInterface {
       let resultPrice = '';
       let resultQuantity = '';
       let resultTotal = '';
+      let cartTotal = '';
       cartItems.forEach((item) => {
         result +=`<div class="shopping-cart-product"><img src=${item.image}><p>${item.name}</p></div>`;
         resultColor += `<p>${item.color}</p>`;
-        resultPrice += `<p>${item.price}</p>`;
+        resultPrice += `<p>${item.price}€</p>`;
         resultQuantity += `<p>${1}</p>`;
-        resultTotal += `<p>${parseInt(item.price) * 1}</p>`;
+        resultTotal += `<p>${parseInt(item.price) * 1}€</p>`;
+
+        cartTotal += parseInt(resultTotal) * parseInt(resultTotal.length);
+        console.log(typeof resultTotal)
+
       });
       productsCartElement[0].innerHTML = result;
       productsColorElement[0].innerHTML = resultColor;
       productsPriceElement[0].innerHTML = resultPrice;
       productsQuantityElement[0].innerHTML = resultQuantity;
       productsTotalElement[0].innerHTML = resultTotal;
+      // deleteCartBtn.addEventListener('click', () => {
+        // console.log(coucou)
+      // });
     }
   }
 }
