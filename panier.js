@@ -52,16 +52,25 @@ class UserInterface {
         resultColor += `<p>${item.color}</p>`;
         resultPrice += `<p>${item.price}€</p>`;
         resultQuantity += `<p>${1}</p>`;
-        resultTotal += `<p><span class="result__total">${parseInt(item.price) * 1}</span>€</p>`;
+        resultTotal += `<p><span class="result__total">${parseInt(item.price, 10) * 1}</span>€</p>`;
 
-        resultCartTotal += parseInt(item.price);
+        //resultCartTotal += parseInt(item.price, 10);
+        
       });
-
       productsCartElement[0].innerHTML = result;
       productsColorElement[0].innerHTML = resultColor;
       productsPriceElement[0].innerHTML = resultPrice;
       productsQuantityElement[0].innerHTML = resultQuantity;
       productsTotalElement[0].innerHTML = resultTotal;
+
+      const teddiesTotal = [...resultTotalElement];
+      console.log(teddiesTotal);
+      teddiesTotal.forEach(teddy => {
+        let shoppingCartTotal = parseInt(teddy.innerHTML, 10)
+        console.log(shoppingCartTotal);
+        resultCartTotal += shoppingCartTotal;
+        console.log(resultCartTotal)
+      });
       cartTotal[0].innerHTML = resultCartTotal;
       // deleteCartBtn.addEventListener('click', () => {
         // console.log(coucou)
