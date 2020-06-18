@@ -23,7 +23,20 @@
 
         <main>
             <h1 class="h1__cart">Résumé de votre panier</h1>
-            <div class="shopping-cart">
+            <table class="shopping-cart">
+              <thead>
+                <tr>
+                  <th>Visuel</th>
+                  <th>Produit</th>
+                  <th>Couleur</th>
+                  <th>Prix</th>
+                  <th>Quantité</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody class="shopping-items"></tbody>
+            </table>
+            <!--<div class="shopping-cart">
               <div class="shopping-cart-products">
                 <h2>Produit</h2>
                 <div class="shopping-cart-area shopping-cart-product"></div>
@@ -44,7 +57,7 @@
                 <h2>Total</h2>
                 <div class="shopping-cart-area shopping-cart-area-total"></div>
               </div>
-            </div>
+            </div>-->
             <h3 class="h3__cart__price">Valeur totale du panier : <span class="cart__total">0</span>€</h3>
             <div class="delete__cart">
               <button class="delete__cart__btn">Vider mon panier</button>

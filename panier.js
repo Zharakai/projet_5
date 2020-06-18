@@ -4,7 +4,7 @@ let productsPriceElement = document.getElementsByClassName('shopping-cart-area-p
 let productsQuantityElement = document.getElementsByClassName('shopping-cart-area-quantity');
 let productsTotalElement = document.getElementsByClassName('shopping-cart-area-total');
 let resultTotalElement = document.getElementsByClassName('result__total');
-let cartTotal = document.getElementsByClassName('cart__total');
+let cartTotalElement = document.getElementsByClassName('cart__total')[0];
 let deleteCartBtn = document.getElementsByClassName('delete__cart__btn');
 
 let titleElement = document.getElementsByClassName('h1__cart');
@@ -41,7 +41,32 @@ class UserInterface {
     if (!cartItems.length) {
       titleElement[0].textContent = 'Désolé, votre panier est vide !';
     } else {
-      let result = '';
+      const cartContainer = document.getElementsByClassName('shopping-items')[0];
+      cartItems.forEach((item) => {
+        const el = document.createElement('tr');
+        el.dataset.uid = `${item.id}-${item.color}`;
+        el.className = "product";
+        el.innerHTML =`
+          <td><img src=${item.image}></td>
+          <td>${item.name}</td>
+          <td>${item.color}</td>
+          <td>${item.price}€</td>
+          <td>${1}</td>
+          <td><span class="result__total">${parseInt(item.price) * 1}</span>€</td>
+        `;
+        cartContainer.appendChild(el);
+      });
+      const items = document.querySelectorAll('tr.product[data-uid]');
+      let cartTotal = 0;
+      for (const item of items) {
+        console.log(item);
+        const itemTotal = item.getElementsByClassName('result__total')[0].textContent;
+        console.log(itemTotal)
+        cartTotal += parseInt(itemTotal);
+        console.log(cartTotal)
+      }
+      cartTotalElement.innerHTML = cartTotal;
+      /*let result = '';
       let resultColor = '';
       let resultPrice = '';
       let resultQuantity = '';
@@ -65,7 +90,7 @@ class UserInterface {
       cartTotal[0].innerHTML = resultCartTotal;
       // deleteCartBtn.addEventListener('click', () => {
         // console.log(coucou)
-      // });
+      // });*/
     }
   }
 }
