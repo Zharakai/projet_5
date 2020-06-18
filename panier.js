@@ -54,7 +54,7 @@ class UserInterface {
         resultQuantity += `<p>${1}</p>`;
         resultTotal += `<p><span class="result__total">${parseInt(item.price, 10) * 1}</span>€</p>`;
 
-        //resultCartTotal += parseInt(item.price, 10);
+        resultCartTotal += parseInt(item.price, 10);
         
       });
       productsCartElement[0].innerHTML = result;
@@ -63,14 +63,14 @@ class UserInterface {
       productsQuantityElement[0].innerHTML = resultQuantity;
       productsTotalElement[0].innerHTML = resultTotal;
 
-      const teddiesTotal = [...resultTotalElement];
+      /*const teddiesTotal = [...resultTotalElement];
       console.log(teddiesTotal);
       teddiesTotal.forEach(teddy => {
         let shoppingCartTotal = parseInt(teddy.innerHTML, 10)
         console.log(shoppingCartTotal);
         resultCartTotal += shoppingCartTotal;
         console.log(resultCartTotal)
-      });
+      });*/
       cartTotal[0].innerHTML = resultCartTotal;
       // deleteCartBtn.addEventListener('click', () => {
         // console.log(coucou)
