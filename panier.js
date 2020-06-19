@@ -59,11 +59,8 @@ class UserInterface {
       const items = document.querySelectorAll('tr.product[data-uid]');
       let cartTotal = 0;
       for (const item of items) {
-        console.log(item);
         const itemTotal = item.getElementsByClassName('result__total')[0].textContent;
-        console.log(itemTotal)
         cartTotal += parseInt(itemTotal);
-        console.log(cartTotal)
       }
       cartTotalElement.innerHTML = cartTotal;
       /*let result = '';

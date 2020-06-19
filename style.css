@@ -151,6 +151,32 @@ form {
   flex-direction: column;
   align-items: center;
 }
+form div, form input {
+  width: 200px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  font-family: "Finger Paint", sans-serif;
+  margin-bottom: 5%;
+}
+
+.btn__submit {
+  margin-top: 5%;
+  cursor: pointer;
+  font-family: "Finger Paint", sans-serif;
+  font-size: 1rem;
+  padding: 2%;
+  background-color: #E28810;
+  border-style: solid;
+  border-radius: 10px;
+}
+.btn__submit:hover {
+  background-color: #8F5BFE;
+}
 
 .shopping-cart {
   text-align: center;
@@ -170,16 +196,23 @@ form {
   max-width: 75px;
 }
 
-.h3__cart__price {
-  text-align: right;
-  margin-right: 5%;
-}
-
 .delete__cart {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 5%;
+}
+.delete__cart__btn {
+  cursor: pointer;
+  font-family: "Finger Paint", sans-serif;
+  font-size: 1rem;
+  padding: 1%;
+  background-color: #E28810;
+  border-style: solid;
+  border-radius: 10px;
+}
+.delete__cart__btn:hover {
+  background-color: #8F5BFE;
 }
 
 .confirm {

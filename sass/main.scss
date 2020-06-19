@@ -180,6 +180,32 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    div, input {
+        width : 200px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    font-family: $primary-police, sans-serif;
+    margin-bottom: 5%;
+}
+
+.btn__submit {
+    margin-top: 5%;
+    cursor: pointer;
+    font-family: $primary-police, sans-serif;
+    font-size: 1rem;
+    padding: 2%;
+    background-color: $primary-color-gradient;
+    border-style: solid;
+    border-radius: 10px;
+    &:hover {
+        background-color: $secondary-color-gradient;
+    }
 }
 
 .shopping-cart {
@@ -200,16 +226,28 @@ form {
   }
 }
 
-.h3__cart__price {
-  text-align: right;
-  margin-right: 5%;
-}
+//.h3__cart__price {
+  //text-align: right;
+  //margin-right: 5%;
+//}
 
 .delete__cart {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 5%;
+  &__btn {
+    cursor: pointer;
+    font-family: $primary-police, sans-serif;
+    font-size: 1rem;
+    padding: 1%;
+    background-color: $primary-color-gradient;
+    border-style: solid;
+    border-radius: 10px;
+    &:hover {
+        background-color: $secondary-color-gradient;
+    }
+  }
 }
 
 // Page confirmation

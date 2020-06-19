@@ -35,30 +35,12 @@
                 </tr>
               </thead>
               <tbody class="shopping-items"></tbody>
+              <tfoot>
+                <tr>
+                  <th colspan="6">Valeur totale du panier : <span class="cart__total">0</span>€</th>
+                </tr>
+              </tfoot>
             </table>
-            <!--<div class="shopping-cart">
-              <div class="shopping-cart-products">
-                <h2>Produit</h2>
-                <div class="shopping-cart-area shopping-cart-product"></div>
-              </div>
-              <div class="shopping-cart-color">
-                <h2>Couleur</h2>
-                <div class="shopping-cart-area shopping-cart-area-color"></div>
-              </div>
-              <div class="shopping-cart-price">
-                <h2>Prix</h2>
-                <div class="shopping-cart-area shopping-cart-area-price"></div>
-              </div>
-              <div class="shopping-cart-quantity">
-                <h2>Quantité</h2>
-                <div class="shopping-cart-area shopping-cart-area-quantity"></div>
-              </div>
-              <div class="shopping-cart-total">
-                <h2>Total</h2>
-                <div class="shopping-cart-area shopping-cart-area-total"></div>
-              </div>
-            </div>-->
-            <h3 class="h3__cart__price">Valeur totale du panier : <span class="cart__total">0</span>€</h3>
             <div class="delete__cart">
               <button class="delete__cart__btn">Vider mon panier</button>
             </div>
@@ -69,7 +51,7 @@
                 </div>
             </div>-->
             
-            <form>
+            <form class="form">
                 <div>
                     <label>Prénom:</label>
                     <input type="text" name="firstName" id="firstName" required>
@@ -91,7 +73,7 @@
                     <input type="email" name="email" id="email" required>
                 </div>
                 <div class="submit__btn">
-                    <input type="submit" value="Passer commande">
+                    <input type="submit" value="Passer commande" class="btn__submit">
                 </div>
             </form>
             <noscript>
