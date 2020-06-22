@@ -163,6 +163,9 @@ table {
   font-family: "Finger Paint", sans-serif;
   margin-bottom: 5%;
 }
+table tfoot th {
+  padding-top: 2%;
+}
 
 .btn__submit {
   margin-top: 5%;

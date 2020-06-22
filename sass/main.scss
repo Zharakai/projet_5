@@ -192,6 +192,11 @@ table {
     width: 100%;
     font-family: $primary-police, sans-serif;
     margin-bottom: 5%;
+    tfoot {
+        th {
+            padding-top: 2%;
+        }
+    }
 }
 
 .btn__submit {

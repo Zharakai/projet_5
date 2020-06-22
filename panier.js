@@ -11,9 +11,6 @@ let titleElement = document.getElementsByClassName('h1__cart');
 
 const cartItems = JSON.parse(localStorage.getItem('cart')) || []; 
 
-// const getItems = localStorage.getItem('cart');
-// let items = JSON.parse(getItems);
-
 // Getting the products
 class Products {
   async getProducts() {
@@ -58,45 +55,41 @@ class UserInterface {
       });
       const items = document.querySelectorAll('tr.product[data-uid]');
       let cartTotal = 0;
+
       for (const item of items) {
         const itemTotal = item.getElementsByClassName('result__total')[0].textContent;
         cartTotal += parseInt(itemTotal);
       }
       cartTotalElement.innerHTML = cartTotal;
-      /*let result = '';
-      let resultColor = '';
-      let resultPrice = '';
-      let resultQuantity = '';
-      let resultTotal = '';
-      let resultCartTotal = '';
-      cartItems.forEach((item) => {
-        result +=`<div class="shopping-cart-product"><img src=${item.image}><p>${item.name}</p></div>`;
-        resultColor += `<p>${item.color}</p>`;
-        resultPrice += `<p>${item.price}€</p>`;
-        resultQuantity += `<p>${1}</p>`;
-        resultTotal += `<p><span class="result__total">${parseInt(item.price, 10) * 1}</span>€</p>`;
 
-        resultCartTotal += parseInt(item.price, 10);
+      if (items.length === 1) {
+        // continue;
+      }
+      // console.log(items);
+
+      for (let i = 0; i <= items.length; i += 1) {
+        const UID = items[i].dataset.uid;
+        console.log(UID)
+        const s = new Set([UID]);
         
-      });
-      productsCartElement[0].innerHTML = result;
-      productsColorElement[0].innerHTML = resultColor;
-      productsPriceElement[0].innerHTML = resultPrice;
-      productsQuantityElement[0].innerHTML = resultQuantity;
-      productsTotalElement[0].innerHTML = resultTotal;
+        // console.log(UID);
+        // if (UID === UID) {
+          // console.log(UID);
+          // items.remove();
+        // }
+        
+      }
 
-      /*const teddiesTotal = [...resultTotalElement];
-      console.log(teddiesTotal);
-      teddiesTotal.forEach(teddy => {
-        let shoppingCartTotal = parseInt(teddy.innerHTML, 10)
-        console.log(shoppingCartTotal);
-        resultCartTotal += shoppingCartTotal;
-        console.log(resultCartTotal)
-      });*/
-      cartTotal[0].innerHTML = resultCartTotal;
-      // deleteCartBtn.addEventListener('click', () => {
-        // console.log(coucou)
-      // });*/
+      
+
+      //for (const item of items) {
+        //if (el.length === 1) {
+        //continue;
+      //} else {
+
+        //}
+      //}
+      
     }
   }
 }
@@ -112,13 +105,3 @@ document.addEventListener('DOMContentLoaded', () => {
     ui.displayItems(cartItems)
   });
 });
-
-/*var removeCartItems = document.getElementsByClassName('btn-danger');
-
-for (var i = 0; i < removeCartItems.length; i =+ 1) {
-    var button = removeCartItems[i];
-    button.addEventListener('click', function(event) {
-        var buttonClicked = event.target;
-        buttonClicked.parentElement.parentElement.remove();
-    })
-}*/
