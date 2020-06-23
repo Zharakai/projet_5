@@ -48,7 +48,7 @@ class UserInterface {
           <td>${item.name}</td>
           <td>${item.color}</td>
           <td>${item.price}€</td>
-          <td>${1}</td>
+          <td><span class="quantity">${1}</span></td>
           <td><span class="result__total">${parseInt(item.price) * 1}</span>€</td>
         `;
         cartContainer.appendChild(el);
@@ -62,26 +62,35 @@ class UserInterface {
       }
       cartTotalElement.innerHTML = cartTotal;
 
-      if (items.length === 1) {
-        // continue;
-      }
-      // console.log(items);
+      cartItems.forEach((item) => {
+        //console.log(item.id, item.color)
+        let quantity = document.getElementsByClassName('quantity')[0].innerHTML;
+        //console.log(quantity);
+        //if (item.id === id && item.color === color) {
+          
+        //}
+      })
 
+      // if (cartItems.length === 1) {
+        // continue;
+      // }
+      // console.log(items);
+      console.log(cartItems);
       for (let i = 0; i <= items.length; i += 1) {
         const UID = items[i].dataset.uid;
         console.log(UID)
-        const s = new Set([UID]);
+        
+        if (items[i].dataset.uid === dataset.uid) {
+          console.log(items[i])
+        }
         
         // console.log(UID);
         // if (UID === UID) {
           // console.log(UID);
           // items.remove();
         // }
-        
       }
-
       
-
       //for (const item of items) {
         //if (el.length === 1) {
         //continue;
