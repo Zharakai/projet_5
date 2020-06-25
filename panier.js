@@ -74,14 +74,25 @@ class UserInterface {
       // if (cartItems.length === 1) {
         // continue;
       // }
-      // console.log(items);
-      console.log(cartItems);
+      // console.log(cartItems);
       for (let i = 0; i <= items.length; i += 1) {
         const UID = items[i].dataset.uid;
-        console.log(UID)
+        const correspondingItems = document.querySelectorAll('[data-uid="'+UID+'"]');
+        const itemsCount = correspondingItems.length;
+        console.log(itemsCount);
         
-        if (items[i].dataset.uid === dataset.uid) {
-          console.log(items[i])
+        if (itemsCount === 1) {
+          continue;
+        }
+
+        correspondingItems[0].getElementsByClassName('quantity')[0].innerHTML = itemsCount;
+
+        // total à calculer
+
+        const iterableItems = document.querySelectorAll('[data-uid="'+UID+'"] ~ [data-uid="'+UID+'"]');
+        for (const itemToDelete of iterableItems) {
+          console.log(itemToDelete);
+          itemToDelete.parentNode.removeChild(itemToDelete);
         }
         
         // console.log(UID);
