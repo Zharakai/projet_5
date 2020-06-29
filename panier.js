@@ -58,28 +58,15 @@ class UserInterface {
 
       for (const item of items) {
         const itemTotal = item.getElementsByClassName('result__total')[0].textContent;
+        // console.log(itemTotal);
         cartTotal += parseInt(itemTotal);
       }
       cartTotalElement.innerHTML = cartTotal;
 
-      cartItems.forEach((item) => {
-        //console.log(item.id, item.color)
-        let quantity = document.getElementsByClassName('quantity')[0].innerHTML;
-        //console.log(quantity);
-        //if (item.id === id && item.color === color) {
-          
-        //}
-      })
-
-      // if (cartItems.length === 1) {
-        // continue;
-      // }
-      // console.log(cartItems);
       for (let i = 0; i <= items.length; i += 1) {
         const UID = items[i].dataset.uid;
         const correspondingItems = document.querySelectorAll('[data-uid="'+UID+'"]');
         const itemsCount = correspondingItems.length;
-        console.log(itemsCount);
         
         if (itemsCount === 1) {
           continue;
@@ -88,28 +75,15 @@ class UserInterface {
         correspondingItems[0].getElementsByClassName('quantity')[0].innerHTML = itemsCount;
 
         // total à calculer
+        let quantity = document.getElementsByClassName('quantity')[i].innerHTML;
+        let price = cartItems[i].price;
+        resultTotalElement[i].innerHTML = quantity * price;
 
         const iterableItems = document.querySelectorAll('[data-uid="'+UID+'"] ~ [data-uid="'+UID+'"]');
         for (const itemToDelete of iterableItems) {
-          console.log(itemToDelete);
           itemToDelete.parentNode.removeChild(itemToDelete);
         }
-        
-        // console.log(UID);
-        // if (UID === UID) {
-          // console.log(UID);
-          // items.remove();
-        // }
       }
-      
-      //for (const item of items) {
-        //if (el.length === 1) {
-        //continue;
-      //} else {
-
-        //}
-      //}
-      
     }
   }
 }
